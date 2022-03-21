@@ -2,7 +2,7 @@
 	function Connect($ServerName, $dbUsername, $dbPassword, $dbName) 
 	{
 		$connect = mysqli_connect($ServerName, $dbUsername, $dbPassword, $dbName);
-		if (!$connect) echo "Veritabanına hatası!";
+		if (!$connect) echo "Database Error!";
 	}
 
 	function Login($username, $password)
@@ -20,8 +20,8 @@
 					$_SESSION['username'] = $row['username'];
 					header("location: /");
 					die();
-				} else echo 'Kullanıcı adı veya şifre yanlış!';
-			} else echo 'Giriş bilgileri hatalı!';
+				} else echo 'Username or password is incorrect!';
+			} else echo 'Such a user is not registered!';
 		}
 	}
 
@@ -31,8 +31,8 @@
 			$connect = mysqli_connect('localhost', 'root', '', 'ahmet');
 			$sql = "INSERT INTO users(username, password) VALUES('$username', '$password')";
 			$query = mysqli_query($connect, $sql);
-			if ($query) echo 'Kayıt başarılı!';
-			else echo 'Kayıt başarısız!';
+			if ($query) echo 'Registration Successful!';
+			else echo 'Registration failed!';
 		}
 	}
 ?>
