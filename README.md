@@ -1,1 +1,1 @@
-# Login and Register System using php and mysql
+Simple login, register system using php and mysql
