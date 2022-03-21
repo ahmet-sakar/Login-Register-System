@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Ana Sayfa</title>
+		<title>Login Or Register</title>
 	</head>
 	<body>
 		<?php
@@ -19,22 +19,22 @@
 
 		<?php if (isset($_SESSION['username'])) { ?>
 			<p>
-				<?php echo 'Hoş Geldin '.$_SESSION['username']; ?>
+				<?php echo "Welcome ".$_SESSION['username']; ?>
 			</p>
 
-			<a href="logout.php">Çıkış Yap</a>
+			<a href="logout.php">Logout</a>
 		<?php } else { ?>
 			<form method="POST" action="/">
-				<input type="text" name="username" placeholder="Kullanıcı adı">
-				<input type="password" name="password" placeholder="Şifre">
-				<button type="submit" name="login">Giriş Yap</button>
+				<input type="text" name="username" placeholder="Username">
+				<input type="password" name="password" placeholder="Password">
+				<button type="submit" name="login">Login</button>
 			</form>
 
 			<form method="POST" action="/">
-				<input type="text" name="username" placeholder="Kullanıcı adı">
-				<input type="password" name="password" placeholder="Şifre">
-				<input type="password" name="repassword" placeholder="Şifre Tekrar">
-				<button type="submit" name="register">Kayıt Ol</button>
+				<input type="text" name="username" placeholder="Username">
+				<input type="password" name="password" placeholder="Password">
+				<input type="password" name="repassword" placeholder="Re-Password">
+				<button type="submit" name="register">Register</button>
 			</form>
 		<?php } ?>
 	</body>
