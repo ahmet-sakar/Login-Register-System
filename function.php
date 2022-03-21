@@ -3,6 +3,7 @@
 	{
 		$connect = mysqli_connect($ServerName, $dbUsername, $dbPassword, $dbName);
 		if (!$connect) echo "Database Error!";
+		return $connect;
 	}
 
 	function Login($username, $password)
